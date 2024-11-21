@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 // import { Button, Input, Label, Textarea, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Checkbox, Alert, AlertDescription } from "@/components/ui";
-import { Button, Input, Label, Textarea, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Checkbox, Alert, AlertDescription } from "../ui";
+// import { Button, Input, Label } from "../ui";
 
 export default function FormComponent() {
   const [formData, setFormData] = useState({
