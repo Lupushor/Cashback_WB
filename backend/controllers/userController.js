@@ -1,9 +1,9 @@
-const { users } = require('../models'); // Импорт модели users
+const { User } = require('../models'); // Импорт модели User
 
 const createUser = async (req, res) => {
   try {
     const { telegram_id, role } = req.body; // Получаем данные из тела запроса
-    const newUser = await users.create({
+    const newUser = await User.create({
       telegram_id,
       role,
     });

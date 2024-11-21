@@ -31,12 +31,13 @@ module.exports = {
         type: Sequelize.ARRAY(Sequelize.STRING),
       },
       status: {
-        type: Sequelize.STRING,
+        type: Sequelize.ENUM("approved", "pending", "rejected"),
         allowNull: false,
       },
     });
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable("reviews");
+    await queryInterface.sequelize.query("DROP TYPE IF EXISTS enum_reviews_status");
   },
 };

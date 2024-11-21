@@ -10,7 +10,7 @@ const userRoutes = require('./routes/userRoutes');
 // Middleware для обработки JSON данных
 app.use(express.json());
 app.use(bodyParser.json());
-app.use('/users', userRoutes);
+// app.use('/users', userRoutes);
 
 // Подключение маршрутов
 app.use('/api', userRoutes);

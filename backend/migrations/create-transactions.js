@@ -31,7 +31,7 @@ module.exports = {
         onDelete: "CASCADE",
       },
       status: {
-        type: Sequelize.STRING,
+        type: Sequelize.ENUM("approved", "pending", "rejected"),
         allowNull: false,
       },
       current_step: {
@@ -51,5 +51,6 @@ module.exports = {
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable("transactions");
+    await queryInterface.sequelize.query("DROP TYPE IF EXISTS enum_reviews_status");
   },
 };
