@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 
 require("dotenv").config(); // Подключаем переменные окружения
 const express = require("express");
@@ -6,6 +6,7 @@ const app = express();
 const { sequelize } = require('./models');
 const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 
 // Middleware для обработки JSON данных
 app.use(express.json());
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 
 // Подключение маршрутов
 app.use('/api', userRoutes);
+app.use('/api', productRoutes);
 
 // Пример основного маршрута для проверки работы сервера
 app.get("/", (req, res) => {
