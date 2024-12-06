@@ -1,5 +1,5 @@
 // frontend/src/components/FormComponent.js
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import axios from "axios";
@@ -8,19 +8,19 @@ import axios from "axios";
 
 export default function FormComponent() {
   const [formData, setFormData] = useState({
-    productName: '',
-    brandName: '',
-    articleNumber: '',
+    productName: "",
+    brandName: "",
+    articleNumber: "",
     photo: null,
-    category: '',
-    keyword: '',
-    buyoutPlan: '',
-    dailyBuyoutPlan: '10',
-    wbPrice: '0',
-    customerPrice: '0',
-    telegramUsername: '',
-    paymentTiming: '',
-    reviewRequirements: '',
+    category: "",
+    keyword: "",
+    buyoutPlan: "",
+    dailyBuyoutPlan: "10",
+    wbPrice: "0",
+    customerPrice: "0",
+    telegramUsername: "",
+    paymentTiming: "",
+    reviewRequirements: "",
     approveReview: false,
   });
 
@@ -32,7 +32,10 @@ export default function FormComponent() {
         photo: formData.photo ? formData.photo.name : null,
       };
 
-      const response = await axios.post("http://localhost:5000/api/products", formPayload);
+      const response = await axios.post(
+        "http://localhost:5000/api/products",
+        formPayload
+      );
       console.log("Продукт успешно добавлен:", response.data);
       alert("Продукт успешно добавлен!");
     } catch (error) {
@@ -41,9 +44,5 @@ export default function FormComponent() {
     }
   };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      {/* Ваши поля формы из кода */}
-    </form>
-  );
+  return <form onSubmit={handleSubmit}>{/* Ваши поля формы из кода */}</form>;
 }

@@ -1,6 +1,6 @@
 // src/pages/HomePage.js
 import React from "react";
-// import FormComponent from "../src/components/forms/FormComponent";
+import FormComponent from "../components/forms/FormComponent";
 
 function HomePage() {
   return (
